@@ -1,0 +1,1336 @@
+body {
+    font-family: "TwitterChirp", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #000;
+    height: 500vh;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    color: rgb(231, 233, 234);
+}
+
+:root {
+    --main-color: rgb(29, 155, 240);
+    --main-transition: .3s;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 240px 1fr 300px;
+    gap: 30px;
+    height: 100%;
+}
+
+.container .left-Li {
+    height: 100vh;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+}
+
+.container .left-Li ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.container .left-Li ul li .cer-only i {
+    transition: var(--main-transition);
+    border-radius: 50%;
+    text-align: center;
+    padding: 12px;
+}
+
+.container .left-Li ul li .cer-only i:hover {
+    background-color: rgba(239, 243, 244, 0.1);
+}
+
+.container .left-Li ul li .active {
+    font-weight: bold;
+}
+
+.container .left-Li ul li .cer-only i {
+    font-size: 25px;
+    min-width: 49px;
+}
+
+.container .left-Li ul li a {
+    display: block;
+    transition: var(--main-transition);
+}
+
+.container .left-Li ul li a:not(.cer-only) {
+    text-transform: capitalize;
+    font-size: 20px;
+    padding: 8px 15px 15px;
+    border-radius: 25px;
+}
+
+.container .left-Li ul li a:not(.cer-only) i {
+    margin-right: 15px;
+}
+
+.container .left-Li ul li a:not(.cer-only):hover {
+    background-color: rgba(239, 243, 244, 0.1);
+}
+
+.container .left-Li ul .tweet {
+    padding: 12px 0;
+    background-color: var(--main-color);
+    color: #f6f6f6;
+    font-size: 18px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: var(--main-transition);
+}
+
+.container .left-Li ul .tweet:hover {
+    background-color: rgb(26, 140, 216);
+}
+
+@media (min-width: 1299px) {
+    .container .left-Li ul li .TW {
+        display: none;
+    }
+}
+
+.container .left-Li ul li .TW i {
+    background-color: rgb(26, 140, 216);
+}
+
+.container .left-Li ul li .TW:hover i {
+    background-color: rgba(26, 140, 216, 0.8);
+}
+
+.container .left-Li .profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 12px;
+    transition: var(--main-transition);
+    border-radius: 50px;
+    position: relative;
+}
+
+.container .left-Li .profile .list {
+    position: absolute;
+    top: -135px;
+    left: 50%;
+    cursor: default;
+    transition: var(--main-transition);
+    transform: translateX(-50%);
+    background-color: #000;
+    border-radius: 16px;
+    padding: 12px 0;
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 15px, rgba(255, 255, 255, 0.15) 0px 0px 3px 1px;
+    display: none;
+}
+
+.container .left-Li .profile .show {
+    display: block;
+}
+
+.container .left-Li .profile .list::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -20px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: #000 transparent transparent transparent;
+}
+
+.container .left-Li .profile .list a {
+    padding: 12px;
+    display: block;
+    font-weight: bold;
+    width: 300px;
+    transition: var(--main-transition);
+}
+
+.container .left-Li .profile .list a:hover {
+    background-color: rgba(239, 243, 244, 0.1);
+}
+
+.container .left-Li .profile:hover {
+    background-color: rgba(239, 243, 244, 0.1);
+}
+
+.container .left-Li .profile>i {
+    font-size: 18px;
+}
+
+.profile-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.container .left-Li .profile .lef {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.container .left-Li .profile .lef .con h4:last-child {
+    color: rgb(113, 118, 123);
+    font-weight: normal;
+}
+
+.container .center {
+    position: relative;
+    padding: 0 20px 0;
+}
+
+.container .center::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background-color: rgb(47, 51, 54);
+}
+
+.container .center::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background-color: rgb(47, 51, 54);
+}
+
+.container .center .header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    transition: var(--main-transition);
+}
+
+.container .center .to-bottom {
+    top: -64px;
+}
+
+.container .center .header .left {
+    position: absolute;
+    left: -20px;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background-color: rgb(47, 51, 54);
+}
+
+.container .center .header .right {
+    position: absolute;
+    right: -20px;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background-color: rgb(47, 51, 54);
+}
+
+.container .center .header::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    width: calc(100% + 40px);
+    height: 100%;
+    backdrop-filter: blur(12px);
+    z-index: -1;
+    background-color: #000000b3;
+}
+
+.container .center .header::after {
+    content: '';
+    position: absolute;
+    left: -20px;
+    bottom: 0;
+    width: calc(100% + 40px);
+    height: 1px;
+    background-color: rgb(47, 51, 54);
+}
+
+.container .center .header .title {
+    padding: 10px 0;
+    position: relative;
+}
+
+.container .center .header .title h2 {
+    font-size: 20px;
+}
+
+.container .center .header .title img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.container .center .header .title i {
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    transform: translateX(-50%);
+    font-size: 25px;
+    color: var(--main-color);
+}
+
+.container .center .header .buttons {
+    display: flex;
+}
+
+.container .center .header .buttons .active {
+    font-weight: bold;
+    color: #f6f6f6;
+}
+
+.container .center .header .buttons button {
+    width: calc(100% / 2);
+    background-color: transparent;
+    border: none;
+    padding: 15px 0;
+    font-size: 18px;
+    transition: var(--main-transition);
+    position: relative;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+    color: rgb(113, 118, 123);
+}
+
+.container .center .header .buttons button:hover {
+    background-color: rgb(47, 51, 54);
+}
+
+.container .center .header .buttons .active::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    height: 3px;
+    width: 70px;
+    border-radius: 25px;
+    background-color: var(--main-color);
+}
+
+.container .center .tweet {
+    padding: 10px 0;
+    position: relative;
+}
+
+
+.container .center .tweet::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    bottom: 0;
+    width: calc(100% + 40px);
+    height: 1px;
+    background-color: rgb(47, 51, 54);
+}
+
+.container .center .tweet .massage {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.container .center .tweet .massage input {
+    height: 50px;
+    width: 100%;
+    color: #f6f6f6;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+}
+
+.container .center .tweet .massage input:focus {
+    outline: none;
+}
+
+.container .center .tweet .TWE {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 65px;
+    padding-top: 20px;
+}
+
+.container .center .tweet .TWE .tweet-options {
+    display: flex;
+    font-size: 16px;
+    gap: 17px;
+}
+
+.container .center .tweet .TWE .tweet-options i {
+    color: var(--main-color);
+    transition: var(--main-transition);
+    cursor: pointer;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.container .center .tweet .TWE .tweet-options i:hover {
+    background-color: rgba(29, 155, 240, 0.1);
+}
+
+.container .center .tweet .TWE .tweetBtn button {
+    color: rgb(255, 255, 255);
+    background-color: var(--main-color);
+    padding: 12px 16px;
+    border-radius: 25px;
+    border: none;
+    opacity: .5;
+    font-weight: bold;
+    font-size: 16.5px;
+    transition: var(--main-transition);
+}
+
+.container .center .tweet .TWE .tweetBtn .active {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.container .center .Tweeta {
+    padding: 10px 0;
+    cursor: pointer;
+    position: relative;
+}
+
+.container .center .Tweeta::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 0;
+    width: calc(100% + 40px);
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.03);
+    opacity: 0;
+    transition: var(--main-transition);
+    z-index: -1;
+}
+
+.container .center .Tweeta:hover::before {
+    opacity: 1;
+}
+
+.container .center .Tweeta::after {
+    content: '';
+    position: absolute;
+    left: -20px;
+    bottom: 0;
+    width: calc(100% + 40px);
+    height: 1px;
+    background-color: rgb(47, 51, 54);
+
+}
+
+.container .center .Tweeta .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .center .Tweeta .info>i {
+    color: rgb(113, 118, 123);
+    font-size: 17px;
+    padding: 12px;
+    border-radius: 50%;
+    transition: var(--main-transition);
+    width: 41px;
+    text-align: center;
+}
+
+.container .center .Tweeta .info>i:hover {
+    background-color: rgba(29, 155, 240, 0.1);
+    color: var(--main-color);
+}
+
+.container .center .Tweeta .info .lef {
+    display: flex;
+    align-items: center;
+}
+
+.container .center .Tweeta .info .lef img {
+    max-width: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.container .center .Tweeta .info .lef .name h4 {
+    cursor: pointer;
+    color: #f6f6f6;
+    display: flex;
+    position: relative;
+}
+
+.container .center .Tweeta .info .lef .name h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: calc(100% - 22px);
+    height: 1px;
+    background-color: #f6f6f6;
+    opacity: 0;
+    transition: var(--main-transition);
+}
+
+.container .center .Tweeta .info .lef .name h4:hover::before {
+    opacity: 1;
+}
+
+.container .center .Tweeta .info .lef .name h4 i {
+    color: rgb(130, 154, 171);
+    margin-left: 6px;
+    margin-top: 5px;
+}
+
+.container .center .Tweeta .info .lef .userN {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 6px;
+    height: fit-content;
+}
+
+.container .center .Tweeta .info .lef .userN span {
+    color: rgb(113, 118, 123);
+}
+
+.container .center .Tweeta .info .lef .userN span:nth-child(2) {
+    transform: translateY(-25%);
+}
+
+.container .center .Tweeta .con {
+    padding-left: 60px;
+    font-size: 15px;
+}
+
+
+
+.container .center .Tweeta .con p {
+    line-height: 1.4;
+}
+
+.container .center .Tweeta .con p+span a {
+    color: var(--main-color);
+    position: relative;
+}
+
+.container .center .Tweeta .con p+span a::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 1px;
+    bottom: 0;
+    width: calc(100% - 10px);
+    background-color: var(--main-color);
+    opacity: 0;
+    transition: var(--main-transition);
+}
+
+.container .center .Tweeta .con p+span a:hover::before {
+    opacity: 1;
+}
+
+.container .center .Tweeta .con>img {
+    max-width: 70%;
+    border-radius: 15px;
+    margin: 20px 0;
+}
+
+.container .center .Tweeta .con .int {
+    display: flex;
+    gap: 40px;
+}
+
+.container .center .Tweeta .con .int .med i,
+.container .center .Tweeta .con .int .med span {
+    color: #71767b;
+    transition: var(--main-transition);
+}
+
+
+.container .center .Tweeta .con .int i {
+    min-width: 27px;
+    margin-right: 6.5px;
+    text-align: center;
+    border-radius: 50%;
+    padding: 6px;
+}
+
+.container .center .Tweeta .con .int .reply:hover i,
+.container .center .Tweeta .con .int .reply:hover span {
+    color: var(--main-color);
+}
+
+.container .center .Tweeta .con .int .reply:hover i {
+    background-color: rgba(29, 155, 240, 0.1);
+}
+
+.container .center .Tweeta .con .int .retweet:hover i,
+.container .center .Tweeta .con .int .retweet:hover span {
+    color: rgb(0, 186, 124);
+}
+
+.container .center .Tweeta .con .int .retweet:hover i {
+    background-color: rgba(0, 186, 124, 0.1);
+}
+
+.container .center .Tweeta .con .int .likes:hover i,
+.container .center .Tweeta .con .int .likes:hover span {
+    color: rgb(249, 24, 128);
+}
+
+.container .center .Tweeta .con .int .likeCld i,
+.container .center .Tweeta .con .int .likeCld span {
+    color: rgb(249, 24, 128);
+}
+
+.container .center .Tweeta .con .int .likes:hover i {
+    background-color: rgba(249, 24, 128, 0.1);
+}
+
+.container .center .Tweeta .con .int .views:hover i,
+.container .center .Tweeta .con .int .views:hover span {
+    color: var(--main-color)
+}
+
+.container .center .Tweeta .con .int .views:hover i {
+    background-color: rgba(29, 155, 240, 0.1);
+}
+
+.container .center .Tweeta .con .int .share:hover i {
+    background-color: rgba(29, 155, 240, 0.1);
+}
+
+.container .center .Tweeta .con .showImg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    display: none;
+}
+
+.container .center .Tweeta .con .showImg img {
+    border-radius: 15px;
+}
+
+.container .center .Tweeta .con .showImg>i {
+    position: absolute;
+    left: 50px;
+    top: 30px;
+    width: 50px;
+    text-align: center;
+    font-size: 25px;
+    transition: var(--main-transition);
+    padding: 12px;
+    border-radius: 50%;
+}
+
+.container .center .Tweeta .con .showImg i:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.container .right .search {
+    position: sticky;
+    top: 0;
+    padding: 10px 0;
+    background-color: #000;
+    z-index: 99;
+}
+
+.container .right .search .fa-magnifying-glass {
+    position: absolute;
+    top: 50%;
+    left: calc(25px - 8px);
+    transform: translateY(-50%);
+    color: var(--main-color);
+}
+
+
+.container .right .search input {
+    height: 45px;
+    padding: 15px 50px;
+    font-size: 18px;
+    background-color: rgb(32, 35, 39);
+    border: none;
+    max-width: 100%;
+    border-radius: 25px;
+}
+
+.container .right .search input:focus {
+    outline: solid 1px var(--main-color);
+    background-color: transparent;
+}
+
+.container .right .search input::placeholder {
+    font-size: 16px;
+}
+
+.container .right .search .remove {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    font-size: 14px;
+    transform: translateY(-50%);
+    color: #000;
+    background-color: var(--main-color);
+    width: 24px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--main-transition);
+    display: none;
+}
+
+.container .right .search .remove:hover {
+    background-color: rgba(29, 155, 240, 0.8);
+}
+
+.container .right .search .recent {
+    position: absolute;
+    top: 103%;
+    width: 100%;
+    padding-bottom: 16px;
+    background-color: #000;
+    border-radius: 10px;
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 15px, rgba(255, 255, 255, 0.15) 0px 0px 3px 1px;
+    display: none;
+}
+
+.container .right .search .D-block {
+    display: block;
+}
+
+.container .right .search .recent .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+}
+
+.container .right .search .recent .close {
+    color: red;
+    font-size: 14px;
+    padding: 6px;
+    border-radius: 50%;
+    width: 26px;
+    text-align: center;
+    transition: var(--main-transition);
+    cursor: pointer;
+}
+
+.container .right .search .recent .title>.close:hover {
+    background-color: rgba(255, 0, 0, 0.16);
+}
+
+.container .right .search .recent .massage i {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.container .right .search .recent .title span {
+    padding: 3px 12px;
+    font-size: 14px;
+    color: var(--main-color);
+    border-radius: 25px;
+    transition: var(--main-transition);
+    cursor: pointer;
+}
+
+.container .right .search .recent .title span:hover {
+    background-color: rgba(29, 155, 240, 0.1);
+}
+
+.container .search .accounts .acc {
+    padding: 12px 16px;
+    transition: var(--main-transition);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.container .search .accounts .acc:hover {
+    background-color: rgb(22, 24, 28);
+}
+
+.container .search .accounts .acc .lef {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.container .search .accounts .acc img {
+    max-width: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.container .search .accounts .acc .name {
+    display: flex;
+    flex-direction: column;
+}
+
+.container .search .accounts .acc .name h4 {
+    color: #f6f6f6;
+    display: flex;
+    position: relative;
+}
+
+.container .search .accounts .acc .name h4 i {
+    color: var(--main-color);
+    margin-left: 6px;
+    margin-top: 5px;
+}
+
+.container .search .accounts .acc .userN span {
+    color: rgb(113, 118, 123);
+}
+
+.container .search .accounts .acc .del {
+    font-size: 14px;
+    padding: 6px;
+    border-radius: 50%;
+    width: 31px;
+    text-align: center;
+    transition: var(--main-transition);
+}
+
+.container .search .accounts .acc .del:hover {
+    background-color: rgba(29, 155, 240, 0.1);
+}
+
+.container .search .accounts .acc .del i {
+    color: var(--main-color);
+}
+
+.container .right .search .recent>.massage {
+    color: rgb(113, 118, 123);
+    font-weight: normal;
+    text-align: center;
+    font-size: 16px;
+    padding: 35px 5px 20px;
+    display: none;
+}
+
+.container .right .other-inf {
+    position: sticky;
+    top: 12px;
+    background-color: rgb(22, 24, 28);
+    border-color: rgb(22, 24, 28);
+    border-radius: 16px;
+    margin-top: 16px;
+}
+
+.container .right .other-inf .title h2 {
+    padding: 12px 16px;
+    font-size: 22px;
+}
+
+.container .right .other-inf ul li {
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--main-transition);
+    cursor: pointer;
+}
+
+.container .right .other-inf ul li:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.container .right .other-inf ul li .left span {
+    color: rgb(113, 118, 123);
+    font-size: 14px;
+}
+
+.container .right .other-inf ul li img {
+    width: 68px;
+    height: 68px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.container .right .other-inf ul li .right {
+    text-align: right;
+}
+
+.container .right .other-inf ul li .right i {
+    color: rgb(113, 118, 123);
+    font-size: 17px;
+    padding: 6px;
+    border-radius: 50%;
+    transition: var(--main-transition);
+    width: 29px;
+    text-align: center;
+}
+
+.container .right .other-inf ul li .right i:hover {
+    background-color: rgba(29, 155, 240, 0.1);
+    color: var(--main-color);
+}
+
+.container .right .other-inf ul .more {
+    display: block;
+    padding: 0;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+.container .right .other-inf ul .more a {
+    display: block;
+    padding: 23px 16px;
+    color: var(--main-color);
+}
+
+.container .bottom-info {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    z-index: 9999;
+}
+
+.container .bottom-info::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgb(47, 51, 54);
+}
+
+.container>.TWmobile {
+    display: block;
+    transition: var(--main-transition);
+    height: fit-content;
+    position: fixed;
+    z-index: 99;
+    right: 30px;
+    bottom: 80px;
+}
+
+.container>.TWmobile i {
+    background-color: rgb(26, 140, 216);
+    font-size: 25px;
+    min-width: 49px;
+    transition: var(--main-transition);
+    border-radius: 50%;
+    text-align: center;
+    padding: 12px;
+    box-shadow: rgba(217, 217, 217, 0.2) 0px 0px 5px, rgba(217, 217, 217, 0.25) 0px 1px 4px 1px;
+}
+
+/* ############ */
+.container .account-info {
+    position: fixed;
+    background-color: #000;
+    width: 50%;
+    height: 100%;
+    z-index: 99999;
+    box-shadow: rgba(217, 217, 217, 0.2) 0px 0px 5px, rgba(217, 217, 217, 0.25) 0px 1px 4px 1px;
+    transform: translateX(-100%);
+    transition: var(--main-transition);
+}
+
+.container>.show {
+    transform: translateX(0);
+}
+
+.container .account-info .top {
+    padding: 10px 16px 0;
+}
+
+.container .account-info .top .one {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.container .account-info .top .one h3 {
+    font-size: 17px;
+}
+
+.container .account-info .top .one i {
+    width: 29.5px;
+    text-align: center;
+    font-size: 17.5px;
+    transition: var(--main-transition);
+    padding: 6px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.container .account-info .top .one i:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.container .account-info .top .two {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.container .account-info .top .two img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.container .account-info .top .two i {
+    width: 29.5px;
+    text-align: center;
+    font-size: 17.5px;
+    transition: var(--main-transition);
+    padding: 6px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: solid 1px rgb(47, 51, 54);
+}
+
+.container .account-info .top .two i:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.container .account-info .top .user {
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.container .account-info .top .user span {
+    color: rgb(113, 118, 123);
+}
+
+.container .account-info .top .follow {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.container .account-info .top .follow .foll {
+    color: rgb(113, 118, 123);
+}
+
+.container .account-info .top .follow .foll span {
+    color: rgb(231, 233, 234);
+}
+
+.container .account-info .list {
+    padding-top: 16px;
+}
+
+.container .account-info .list .top-li {
+    position: relative;
+}
+
+.container .account-info .list .top-li li {
+    padding: 16px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: var(--main-transition);
+    cursor: pointer;
+}
+
+.container .account-info .list .top-li li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.container .account-info .list .top-li li i {
+    margin-right: 15px;
+}
+
+.container .account-info .list .top-li::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    translate: -50%;
+    width: calc(100% - 32px);
+    height: 1px;
+    background-color: rgb(47, 51, 54);
+
+}
+
+.container .account-info .list .bottom-li li {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: var(--main-transition);
+}
+
+.container .account-info .list .bottom-li li:Hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.container .account-info .list .bottom-li li i {
+    transition: var(--main-transition);
+}
+
+.container .account-info .list .bottom-li li .rotate {
+    rotate: 180deg;
+    color: rgb(29, 155, 240);
+}
+
+.container .bottom-info ul {
+    display: flex;
+    padding: 10px 0;
+}
+
+.container .bottom-info ul li {
+    width: 25%;
+}
+
+.container .bottom-info ul li a {
+    display: block;
+    text-align: center;
+    font-size: 25px;
+}
+
+@media (max-width: 1299px) {
+    .container .left-Li ul li a {
+        max-width: fit-content;
+    }
+
+    .container .left-Li ul .tweet {
+        display: none;
+    }
+
+    .container {
+        grid-template-columns: 0fr 1fr 300px;
+    }
+
+    .container .left-Li .profile .lef .con {
+        display: none;
+    }
+
+    .container .left-Li .profile>i {
+        display: none;
+    }
+
+    .container .left-Li .profile {
+        padding: 0;
+    }
+
+    .container .left-Li .profile .list {
+        left: 0;
+        transform: translateX(0);
+    }
+
+    .container .left-Li .profile .list::before {
+        left: 25px;
+    }
+
+    .container .left-Li {
+        z-index: 999;
+    }
+}
+
+@media (max-width: 991px) {
+    .container>.right {
+        display: none;
+    }
+
+    .container {
+        display: flex;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        width: fit-content;
+    }
+
+    .container .center .Tweeta .con .int {
+        gap: 0;
+        width: 100%;
+    }
+
+    .container .center .Tweeta .con .int .med {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: calc(100% / 4);
+    }
+
+    .container .center .Tweeta .con .int i {
+        margin-right: 0;
+    }
+
+    .container .center .Tweeta .con .showImg img {
+        max-width: 70%;
+    }
+}
+
+@media (max-width: 575px) {
+    .container .left-Li {
+        display: none;
+    }
+
+    .container .center .tweet {
+        display: none;
+    }
+
+    .container .center .Tweeta .con {
+        margin-top: 20px;
+        padding-left: 30px;
+    }
+
+    .container .center .header .title h2 {
+        display: none;
+    }
+
+    .container .center .header .buttons button {
+        font-size: 16px;
+    }
+
+    .container .center .Tweeta .con p {
+        font-size: 17px;
+    }
+
+    .container .center .Tweeta .info .lef .name h4 {
+        font-size: 13.5px;
+    }
+
+    .container .center .Tweeta .info .lef .userN {
+        font-size: 14.5px;
+    }
+
+    .container .center .header .buttons button {
+        padding: 19px 0;
+    }
+
+    .container .center .Tweeta .con .showImg img {
+        max-width: 80%;
+    }
+
+    .container .center .header .left {
+        display: none;
+    }
+
+    .container .center .header .right {
+        display: none;
+    }
+
+    .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media (min-width: 575px) {
+    .container .center .header .title img {
+        display: none;
+    }
+
+    .container .center .header .title i {
+        display: none;
+    }
+
+    .container>.TWmobile {
+        display: none;
+    }
+
+    .container .bottom-info {
+        display: none;
+    }
+
+    .container .account-info {
+        display: none;
+    }
+}
+
+@media (max-width: 400px) {
+    .container .center .Tweeta .con .showImg img {
+        max-width: calc(100% - 30px);
+    }
+}
