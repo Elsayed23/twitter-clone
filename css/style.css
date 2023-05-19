@@ -1,7 +1,6 @@
 body {
     font-family: "TwitterChirp", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: #000;
-    height: 500vh;
 }
 
 html {
@@ -1009,7 +1008,7 @@ a {
 .container .account-info {
     position: fixed;
     background-color: #000;
-    width: 50%;
+    width: 80%;
     height: 100%;
     z-index: 99999;
     box-shadow: rgba(217, 217, 217, 0.2) 0px 0px 5px, rgba(217, 217, 217, 0.25) 0px 1px 4px 1px;
